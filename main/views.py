@@ -6,3 +6,6 @@ def homepage(request):
 
 def test(request):
     return HttpResponse('This is testing page!')
+
+def second(request):
+    return HttpResponse('second page')
