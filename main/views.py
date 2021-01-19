@@ -9,3 +9,12 @@ def test(request):
 
 def second(request):
     return HttpResponse('second page')
+
+def add(request):
+    return render(request, "ok.html")
+
+def delite(request):
+    return render(request, "del.html")
+
+def change(request):
+    return render(request, "change.html")
