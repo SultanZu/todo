@@ -8,6 +8,9 @@ def test(request):
     todo_list = ToDo.objects.all()
     return render(request, 'test.html', {"todo_list": todo_list})
 
+def books(request):
+    return render(request, 'books.html')
+
 def second(request):
     return HttpResponse('second page')
 
