@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    display: flex;
+    justify-content: space-evenly;
+}
+.item {
+    background-color: khaki;
+    width: 300px;
+    height: 100%;
+    border: 2px solid gray;
+    text-align: center;
+    padding: 10px;
+}
+.item-desc {
+    text-align: left;
+}
+.item-footer {
+    text-align: left;
+}
+.item-footer span {
+    font-weight: bold;
+}
+.date {
+    margin-right: 5px;
+    margin-bottom: 3px;
+    text-align: right;
+    font-size: 14px;
+}

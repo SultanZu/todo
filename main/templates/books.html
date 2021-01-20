@@ -1,36 +1,31 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>books</title>
     <link rel="stylesheet" href="{% static 'styles/styles-books.css' %}">
 </head>
+
 <body>
+    {% for book in books %}
     <div class="item">
-        <div class="item-for-img">
-
+        <div class="item-title">
+            <h3>{{ book.title }}</h3>
         </div>
-        <div class="item-for-title">
-
+        <div class="item-desc">
+            <p>{{ book.description }}</p>
         </div>
-        <div class="item-for-desc">
-
+        <div class="item-footer">
+            <span>Автор: </span>{{ book.author }}<br>
+            <span>Жанр: </span>{{ book.genre }}<br>
+            <span>Год выпуска: </span>{{ book.year }}<br>
         </div>
-        <div class="item-for-genre">
-
-        </div>
-        <div class="item-for-author">
-
-        </div>
-        <div class="item-for-year">
-
-        </div>
-
-        <div class="item-for-price">
-
-        </div>
+        <p class="date">Добавлено: <span>{{ book.date }}</span></p>
     </div>
+    {% endfor %}
 </body>
+
 </html>
