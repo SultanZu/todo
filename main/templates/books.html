@@ -10,22 +10,38 @@
 </head>
 
 <body>
-    {% for book in books %}
-    <div class="item">
-        <div class="item-title">
-            <h3>{{ book.title }}</h3>
+
+        <form action="" method="POST">
+            <h3>Добавить книгу</h3>
+            <p><span>Заголовок: </span><br><input type="text" name="add-book"></p>
+            <p><span>Подзаголовок: </span><br><input type="text" name="add-book"></p>
+            <p><span>Описание: </span><br><textarea name="" id="" cols="30" rows="10"></textarea></p>
+            <p><span>Жанр: </span><br><input type="text" name="add-book"></p>
+            <p><span>Автор: </span><br><input type="text" name="add-book"></p>
+            <p><span>Год выхода книги: </span><br><input type="text" name="add-book"></p>
+            <p><span>Цена: </span><br><input type="text" name="add-book"></p>
+            <p><button>Добавить</button></p>
+        </form>
+
+
+        {% for book in books %}
+        <div class="item">
+            <div class="item-title">
+                <h3>{{ book.title }}</h3>
+            </div>
+            <div class="item-desc">
+                <p>{{ book.description }}</p>
+            </div>
+            <div class="item-footer">
+                <span>Автор: </span>{{ book.author }}<br>
+                <span>Жанр: </span>{{ book.genre }}<br>
+                <span>Год выпуска: </span>{{ book.year }}<br>
+            </div>
+            <p class="date">Добавлено: <span>{{ book.date }}</span></p>
         </div>
-        <div class="item-desc">
-            <p>{{ book.description }}</p>
-        </div>
-        <div class="item-footer">
-            <span>Автор: </span>{{ book.author }}<br>
-            <span>Жанр: </span>{{ book.genre }}<br>
-            <span>Год выпуска: </span>{{ book.year }}<br>
-        </div>
-        <p class="date">Добавлено: <span>{{ book.date }}</span></p>
-    </div>
-    {% endfor %}
+        {% endfor %}
+    <!-- </div> -->
+
 </body>
 
 </html>

@@ -2,14 +2,44 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-body {
+body{
+    background-color: #e8df8d;
+    display: flex;
+}
+
+.for-form {
+    display: block;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+form {
+    width: 250px;
+    height: 100%;
+    padding: 10px;
+}
+form p {
+    margin: 2px 0;
+}
+form input, textarea {
+    background-color: transparent;
+}
+form p:last-child {
+    display: flex;
+    justify-content: flex-end;
+}
+button {
+    background-color: #cebb0f;
+}
+.wrapper {
     display: flex;
     justify-content: space-evenly;
 }
 
 .item {
     background-color: khaki;
-    width: 300px;
+    width: 250px;
     height: 100%;
     border: 2px solid gray;
     text-align: center;
@@ -17,9 +47,12 @@ body {
 }
 .item-desc {
     text-align: left;
+    font-size: 14px;
 }
 .item-footer {
     text-align: left;
+    font-size: 14px;
+
 }
 .item-footer span {
     font-weight: bold;
