@@ -24,3 +24,9 @@ def delite(request):
 
 def change(request):
     return render(request, "change.html")
+
+def add_todo(request):
+    form = request.POST
+    # text = form["todo-text"]
+    print(form)
+    return HttpResponse("Succes!")

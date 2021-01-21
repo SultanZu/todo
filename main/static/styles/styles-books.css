@@ -6,6 +6,7 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
+
 .item {
     background-color: khaki;
     width: 300px;
