@@ -22,20 +22,14 @@ def add_book(request):
     author = form['book-author']
     year = form['book-year']
     price = form['book-price']
-    bookTi = books(title=title,subtitle=subTitle,description=desc,genre=genre,author=author,year=year,price=price)
-    # bookSuTi = books(subtitle=subTitle)
-    # bookDesc = books(description=desc)
-    # bookGenre = books(genre=genre)
-    # bookAuthor = books(author=author)
-    # bookYear = books(year=year)
-    # bookPrice = books(price=price)
+    bookTi = books(title=title,
+        subtitle=subTitle,
+        description=desc,
+        genre=genre,
+        author=author,
+        year=year,
+        price=price)
     bookTi.save()
-    # bookSuTi.save()
-    # bookDesc.save()
-    # bookGenre.save()
-    # bookAuthor.save()
-    # bookYear.save()
-    # bookPrice.save()
     return redirect(bookss)
 
 def second(request):
