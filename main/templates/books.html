@@ -11,15 +11,16 @@
 
 <body>
 
-        <form action="" method="POST">
+        <form action="{% url 'add-book' %}" method="POST">
             <h3>Добавить книгу</h3>
-            <p><span>Заголовок: </span><br><input type="text" name="add-book"></p>
-            <p><span>Подзаголовок: </span><br><input type="text" name="add-book"></p>
-            <p><span>Описание: </span><br><textarea name="" id="" cols="30" rows="10"></textarea></p>
-            <p><span>Жанр: </span><br><input type="text" name="add-book"></p>
-            <p><span>Автор: </span><br><input type="text" name="add-book"></p>
-            <p><span>Год выхода книги: </span><br><input type="text" name="add-book"></p>
-            <p><span>Цена: </span><br><input type="text" name="add-book"></p>
+            {% csrf_token %}
+            <p><span>Заголовок: </span><br><input type="text" name="book-title"></p>
+            <p><span>Подзаголовок: </span><br><input type="text" name="book-subtitle"></p>
+            <p><span>Описание: </span><br><textarea name="book-des" cols="30" rows="10"></textarea></p>
+            <p><span>Жанр: </span><br><input type="text" name="book-genre"></p>
+            <p><span>Автор: </span><br><input type="text" name="book-author"></p>
+            <p><span>Год выхода книги: </span><br><input type="text" name="book-year"></p>
+            <p><span>Цена: </span><br><input type="text" name="book-price"></p>
             <p><button>Добавить</button></p>
         </form>
 

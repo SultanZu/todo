@@ -5,6 +5,7 @@
 body{
     background-color: #e8df8d;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .for-form {

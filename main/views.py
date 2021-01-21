@@ -13,6 +13,31 @@ def bookss(request):
     bib_books = books.objects.all()
     return render(request, 'books.html', {"books": bib_books})
 
+def add_book(request):
+    form = request.POST
+    title = form['book-title']
+    subTitle = form['book-subtitle']
+    desc = form['book-des']
+    genre = form['book-genre']
+    author = form['book-author']
+    year = form['book-year']
+    price = form['book-price']
+    bookTi = books(title=title,subtitle=subTitle,description=desc,genre=genre,author=author,year=year,price=price)
+    # bookSuTi = books(subtitle=subTitle)
+    # bookDesc = books(description=desc)
+    # bookGenre = books(genre=genre)
+    # bookAuthor = books(author=author)
+    # bookYear = books(year=year)
+    # bookPrice = books(price=price)
+    bookTi.save()
+    # bookSuTi.save()
+    # bookDesc.save()
+    # bookGenre.save()
+    # bookAuthor.save()
+    # bookYear.save()
+    # bookPrice.save()
+    return redirect(bookss)
+
 def second(request):
     return HttpResponse('second page')
 
