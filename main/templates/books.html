@@ -39,6 +39,14 @@
                 <span>Год выпуска: </span>{{ book.year }}<br>
             </div>
             <p class="date">Добавлено: <span>{{ book.date }}</span></p>
+            <div class="action_buttons">
+                {% if book.is_favorite %}
+                    <a href="{% url 'unmark-book' book.id %}"><img src="{% static 'icons/marked.png' %}"></a>
+                {% else %}
+                    <a href="{% url 'mark-book' book.id %}"><img src="{% static 'icons/unmarked.png' %}"></a>
+                {% endif %}
+                <a href="{% url 'delete-book' book.id %}"><img src="{% static 'icons/delete.png' %}"></a>
+            </div>
         </div>
         {% endfor %}
 

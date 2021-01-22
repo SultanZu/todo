@@ -18,5 +18,7 @@ class books(models.Model):
     author = models.CharField(max_length=50)
     year = models.CharField(max_length=4)
     date = models.DateField(auto_now_add=True)
+    is_favorite = models.BooleanField(default=False)
+    is_closed = models.BooleanField(default=False)
 
     

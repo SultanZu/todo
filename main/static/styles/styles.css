@@ -19,6 +19,12 @@ section {
     flex-wrap: nowrap;
 }
 
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .create_input {
     padding: 12px 5px;
     font-size: 18px;
@@ -108,9 +114,3 @@ section {
     display: flex;
 }
 
-.todo_item_footer img {
-    width: 25px;
-    height: 25px;
-    margin: 0 5px;
-    cursor: pointer;
-}

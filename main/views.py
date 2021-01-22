@@ -32,6 +32,23 @@ def add_book(request):
     book.save()
     return redirect(bookss)
 
+def delete_book(request, id):
+    book = books.objects.get(id=id)
+    book.delete()
+    return redirect(bookss)
+
+def mark_book(request, id):
+    book = books.objects.get(id=id)
+    book.is_favorite = True
+    book.save()
+    return redirect(bookss)
+
+def unmark_book(request, id):
+    book = books.objects.get(id=id)
+    book.is_favorite = False
+    book.save()
+    return redirect(bookss)
+
 def second(request):
     return HttpResponse('second page')
 
@@ -54,4 +71,16 @@ def add_todo(request):
 def delete_todo(request, id):
     todo = ToDo.objects.get(id=id)
     todo.delete()
+    return redirect(test)
+
+def mark_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_favorite = True
+    todo.save()
+    return redirect(test)
+
+def unmark_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_favorite = False
+    todo.save()
     return redirect(test)
