@@ -22,14 +22,14 @@ def add_book(request):
     author = form['book-author']
     year = form['book-year']
     price = form['book-price']
-    bookTi = books(title=title,
+    book = books(title=title,
         subtitle=subTitle,
         description=desc,
         genre=genre,
         author=author,
         year=year,
         price=price)
-    bookTi.save()
+    book.save()
     return redirect(bookss)
 
 def second(request):
@@ -49,4 +49,9 @@ def add_todo(request):
     text = form["todo-text"]
     todo = ToDo(text=text)
     todo.save()
+    return redirect(test)
+
+def delete_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.delete()
     return redirect(test)

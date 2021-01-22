@@ -22,14 +22,15 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage, name='home'),
-    path('test', test, name='test'),
-    path('test2', second),
-    path('add', add),
-    path('del', delite),
-    path('change', change),
-    path('books', bookss),
-    path('add-book', add_book, name='add-book'),
-    path('add-todo', add_todo, name="add-todo"),
+    path('test/', test, name='test'),
+    path('test2/', second),
+    path('add/', add),
+    path('del/', delite),
+    path('change/', change),
+    path('books/', bookss),
+    path('add-book/', add_book, name='add-book'),
+    path('add-todo/', add_todo, name="add-todo"),
+    path('delete-todo/<id>/', delete_todo, name='delete-todo'),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
