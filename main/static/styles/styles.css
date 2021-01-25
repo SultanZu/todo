@@ -88,6 +88,11 @@ form {
     border: 2px solid #fad66a;
 }
 
+.action_buttons img {
+    width: 25px;
+    height: 25px;
+}
+
 .todo_item_header {
     display: flex;
     align-items: center;

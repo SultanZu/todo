@@ -49,6 +49,14 @@ def unmark_book(request, id):
     book.save()
     return redirect(bookss)
 
+def book_details(request, id):
+    bib_books = books.objects.filter(id=id)
+    return render(request, 'books.html', {"books": bib_books})
+
+def todo(request, id):
+    todo_object = ToDo.objects.filter(id=id)
+    return render(request, 'books_detail.html', {"todo_list": todo_object})
+
 def second(request):
     return HttpResponse('second page')
 

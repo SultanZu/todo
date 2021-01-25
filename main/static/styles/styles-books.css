@@ -7,7 +7,11 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+body a {
+    text-decoration: none;
+    color: #000;
 
+}
 .for-form {
     display: block;
     display: flex;
@@ -19,6 +23,7 @@ form {
     width: 250px;
     height: 100%;
     padding: 10px;
+    border-right: 2px solid gray;
 }
 form p {
     margin: 2px 0;
@@ -46,6 +51,16 @@ button {
     text-align: center;
     padding: 10px;
     margin: 3px;
+
+    transition: all .300s ease;
+}
+.item:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+.item.marked {
+    background-color: #f3e142;
+    border: 2px solid gray;
 }
 .item-desc {
     text-align: left;
