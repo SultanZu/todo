@@ -12,7 +12,11 @@
 <body>
     {% for book in books %}
     <div class="book_box">
-        <div class="book_detail">
+        <div class="book_detail
+        {% if book.is_favorite %}
+            marked
+        {% endif %}
+        ">
             <h1>{{ book.title }}</h1>
             <p>{{ book.description }}</p>
             <div class="item-footer">

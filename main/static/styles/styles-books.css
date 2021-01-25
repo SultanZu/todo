@@ -5,7 +5,7 @@
 body{
     background-color: #e8df8d;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 body a {
     text-decoration: none;
@@ -24,6 +24,7 @@ form {
     height: 100%;
     padding: 10px;
     border-right: 2px solid gray;
+    position: fixed;
 }
 form p {
     margin: 2px 0;
@@ -43,6 +44,14 @@ button {
     justify-content: space-evenly;
 }
 
+.container_for_item {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 0;
+}
+
 .item {
     background-color: khaki;
     width: 250px;
@@ -58,7 +67,8 @@ button {
     cursor: pointer;
     transform: scale(1.01);
 }
-.item.marked {
+.item.marked,
+.book_detail.marked {
     background-color: #f3e142;
     border: 2px solid gray;
 }
@@ -104,4 +114,58 @@ button {
 
 .book_detail a button {
     cursor: pointer;
+}
+
+@media screen and (max-width: 1279px) {
+     .container_for_item {
+         justify-content: center;
+     }
+}
+@media screen and (max-width: 1075px) {
+    body {
+        display: block;
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: static;
+        width: auto;
+        border: 2px solid gray;
+    }
+    h3 {
+        width: 100%;
+        text-align: center;
+    }
+    form input {
+        margin: 0 10px;
+    }
+    form p:nth-child(5) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    textarea {
+        max-width: 400px;
+        height: 100px;
+    }
+    .container_for_item {
+        position: static;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 434px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: static;
+        width: auto;
+        border: 2px solid gray;
+    }
+    form p:nth-child(5) {
+        width: 197px;
+        display: block;
+    }
 }
