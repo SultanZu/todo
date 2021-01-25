@@ -1,14 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books detail</title>
+    <link rel="stylesheet" href="{% static 'styles/styles-books.css' %}">
 </head>
+
 <body>
-    <h1>hello</h1>
-    {% for todo in todo_list %}
-        {{ todo.text }}
+    {% for book in books %}
+    <div class="book_box">
+        <div class="book_detail">
+            <h1>{{ book.title }}</h1>
+            <p>{{ book.description }}</p>
+            <div class="item-footer">
+                <span>Автор: </span>{{ book.author }}<br>
+                <span>Жанр: </span>{{ book.genre }}<br>
+                <span>Год выпуска: </span>{{ book.year }}-год<br>
+                <span>Цена: </span>{{ book.price }}-сом<br>
+            </div>
+            <p><a href="{% url 'book-back' %}"><button>Назад</button></a></p>
+        </div>
+    </div>
     {% endfor %}
 </body>
+
 </html>

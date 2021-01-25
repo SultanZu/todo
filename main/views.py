@@ -51,7 +51,10 @@ def unmark_book(request, id):
 
 def book_details(request, id):
     bib_books = books.objects.filter(id=id)
-    return render(request, 'books.html', {"books": bib_books})
+    return render(request, 'books_detail.html', {"books": bib_books})
+
+def book_back(request):
+    return redirect(bookss)
 
 def todo(request, id):
     todo_object = ToDo.objects.filter(id=id)

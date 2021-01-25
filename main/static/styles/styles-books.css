@@ -90,3 +90,18 @@ button {
     width: 25px;
     height: 25px;
 }
+
+/* for book details */
+
+.book_box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.book_detail {
+    width: 70%;
+}
+
+.book_detail a button {
+    cursor: pointer;
+}
