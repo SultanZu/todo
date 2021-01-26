@@ -25,37 +25,43 @@
     </form>
 
     <div class="container_for_item">
-        {% for book in books %}
-        <a href="{% url 'book-details' book.id %}">
-            <div class="item
+        <div class="title">
+            <h1>Библиотека</h1>
+        </div>
+        <div class="for-item">
+            {% for book in books %}
+            <a href="{% url 'book-details' book.id %}">
+                <div class="item
                 {% if book.is_favorite %}
                     marked
                 {% endif %}
             ">
-                <div class="item-title">
-                    <h3>{{ book.title }}</h3>
+                    <div class="item-title">
+                        <h3>{{ book.title }}</h3>
+                    </div>
+                    <div class="item-desc">
+                        <p>{{ book.description }}</p>
+                    </div>
+                    <div class="item-footer">
+                        <span>Автор: </span>{{ book.author }}<br>
+                        <span>Жанр: </span>{{ book.genre }}<br>
+                        <span>Год выпуска: </span>{{ book.year }}-год<br>
+                        <span>Цена: </span>{{ book.price }}-сом<br>
+                    </div>
+                    <p class="date">Добавлено: <span>{{ book.date }}</span></p>
+                    <div class="action_buttons">
+                        {% if book.is_favorite %}
+                        <a href="{% url 'unmark-book' book.id %}"><img src="{% static 'icons/marked.png' %}"></a>
+                        {% else %}
+                        <a href="{% url 'mark-book' book.id %}"><img src="{% static 'icons/unmarked.png' %}"></a>
+                        {% endif %}
+                        <a href="{% url 'delete-book' book.id %}"><img src="{% static 'icons/delete.png' %}"></a>
+                    </div>
                 </div>
-                <div class="item-desc">
-                    <p>{{ book.description }}</p>
-                </div>
-                <div class="item-footer">
-                    <span>Автор: </span>{{ book.author }}<br>
-                    <span>Жанр: </span>{{ book.genre }}<br>
-                    <span>Год выпуска: </span>{{ book.year }}-год<br>
-                    <span>Цена: </span>{{ book.price }}-сом<br>
-                </div>
-                <p class="date">Добавлено: <span>{{ book.date }}</span></p>
-                <div class="action_buttons">
-                    {% if book.is_favorite %}
-                    <a href="{% url 'unmark-book' book.id %}"><img src="{% static 'icons/marked.png' %}"></a>
-                    {% else %}
-                    <a href="{% url 'mark-book' book.id %}"><img src="{% static 'icons/unmarked.png' %}"></a>
-                    {% endif %}
-                    <a href="{% url 'delete-book' book.id %}"><img src="{% static 'icons/delete.png' %}"></a>
-                </div>
-            </div>
-        </a>
-        {% endfor %}
+            </a>
+            {% endfor %}
+
+        </div>
 
     </div>
 

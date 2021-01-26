@@ -46,10 +46,28 @@ button {
 
 .container_for_item {
     width: 80%;
-    display: flex;
-    flex-wrap: wrap;
+   
     position: absolute;
     right: 0;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container_for_item h1 {
+    text-align: center;
+    margin: 5px 0;
+    border-bottom: 2px solid gray;
+    width: 80%;
+}
+
+.for-item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .item {
@@ -117,8 +135,8 @@ button {
 }
 
 @media screen and (max-width: 1279px) {
-     .container_for_item {
-         justify-content: center;
+     .for-item {
+        justify-content: center;
      }
 }
 @media screen and (max-width: 1075px) {
