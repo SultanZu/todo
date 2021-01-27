@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 body{
     background-color: #e8df8d;
@@ -110,7 +110,7 @@ button {
 .date {
     margin-right: 5px;
     margin-bottom: 3px;
-    text-align: right;
+    text-align: left;
     font-size: 14px;
 }
 

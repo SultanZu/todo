@@ -16,7 +16,7 @@
         {% csrf_token %}
         <p><span>Заголовок: </span><br><input type="text" name="book-title"></p>
         <p><span>Подзаголовок: </span><br><input type="text" name="book-subtitle"></p>
-        <p><span>Описание: </span><br><textarea name="book-des" cols="28" rows="18"></textarea></p>
+        <p><span>Описание: </span><br><textarea name="book-des" cols="28" rows="16"></textarea></p>
         <p><span>Жанр: </span><br><input type="text" name="book-genre"></p>
         <p><span>Автор: </span><br><input type="text" name="book-author"></p>
         <p><span>Год выхода книги: </span><br><input type="text" name="book-year"></p>
@@ -43,12 +43,12 @@
                         <p>{{ book.description }}</p>
                     </div>
                     <div class="item-footer">
-                        <span>Автор: </span>{{ book.author }}<br>
+                        <span id="test">Автор: </span>{{ book.author }}<br>
                         <span>Жанр: </span>{{ book.genre }}<br>
                         <span>Год выпуска: </span>{{ book.year }}-год<br>
                         <span>Цена: </span>{{ book.price }}-сом<br>
                     </div>
-                    <p class="date">Добавлено: <span>{{ book.date }}</span></p>
+                    <p class="date"><sub>Добавлено: <span>{{ book.date }}</span></sub></p>
                     <div class="action_buttons">
                         {% if book.is_favorite %}
                         <a href="{% url 'unmark-book' book.id %}"><img src="{% static 'icons/marked.png' %}"></a>
@@ -64,7 +64,6 @@
         </div>
 
     </div>
-
 </body>
 
 </html>

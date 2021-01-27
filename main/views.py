@@ -58,7 +58,7 @@ def book_back(request):
 
 def todo(request, id):
     todo_object = ToDo.objects.filter(id=id)
-    return render(request, 'books_detail.html', {"todo_list": todo_object})
+    return render(request, 'test.html', {"todo_list": todo_object})
 
 def second(request):
     return HttpResponse('second page')
@@ -98,6 +98,6 @@ def unmark_todo(request, id):
 
 def close_todo(request, id):
     todo = ToDo.objects.get(id=id)
-    todo.is_closed = True
+    todo.is_closed = not todo.is_closed
     todo.save()
     return redirect(test)
